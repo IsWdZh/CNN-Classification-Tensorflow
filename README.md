@@ -1,44 +1,44 @@
-## CNN Classficition Tensorflow
+# CNN Classficition Tensorflow
 
->Ê¹ÓÃTensorflow¹¹½¨Ò»¸ö¾í»ıÉñ¾­ÍøÂçµÄ·ÖÀàÎÊÌâ
+>ä½¿ç”¨Tensorflowæ„å»ºä¸€ä¸ªå·ç§¯ç¥ç»ç½‘ç»œçš„åˆ†ç±»é—®é¢˜
 
-Ê¶±ğÍ¼Æ¬ÖĞµÄÊÖÊÆ±íÊ¾µÄÊı×Ö£º0-5
+è¯†åˆ«å›¾ç‰‡ä¸­çš„æ‰‹åŠ¿è¡¨ç¤ºçš„æ•°å­—ï¼š0-5
 
-### Êı¾İ¼¯
-- ÑµÁ·¼¯Êı¾İÎª $1080$¸ö
-- ²âÊÔ¼¯Êı¾İÎª $120$ ¸ö
-- Ã¿ÕÅÍ¼Æ¬µÄ³ß´çÎª $64\times 64\times 3$
-
-
-### ÊµÏÖ¹ı³Ì
+### æ•°æ®é›†
+- è®­ç»ƒé›†æ•°æ®ä¸º $1080$ä¸ª
+- æµ‹è¯•é›†æ•°æ®ä¸º $120$ ä¸ª
+- æ¯å¼ å›¾ç‰‡çš„å°ºå¯¸ä¸º $64\times 64\times 3$
 
 
+### å®ç°è¿‡ç¨‹
 
-- ¾í»ı²ã£¨Conv2D£©: stride 1, padding is 'SAME'
-- ·ÇÏßĞÔ¼¤»îº¯Êı£¨Relu£©
-- ³Ø»¯²ã£¨Max Pool£©: 8 by 8 filter, 8 by 8 stride, padding is 'SAME'
+
+
+- å·ç§¯å±‚ï¼ˆConv2Dï¼‰: stride 1, padding is 'SAME'
+- éçº¿æ€§æ¿€æ´»å‡½æ•°ï¼ˆReluï¼‰
+- æ± åŒ–å±‚ï¼ˆMax Poolï¼‰: 8 by 8 filter, 8 by 8 stride, padding is 'SAME'
 <br />
-- ¾í»ı²ã£¨Conv2D£©: stride 1, padding is 'SAME'
-- ·ÇÏßĞÔ¼¤»îº¯Êı£¨Relu£©
-- ³Ø»¯²ã£¨Max Pool£©: 4 by 4 filter, 4 by 4 stride, padding is 'SAME'
+- å·ç§¯å±‚ï¼ˆConv2Dï¼‰: stride 1, padding is 'SAME'
+- éçº¿æ€§æ¿€æ´»å‡½æ•°ï¼ˆReluï¼‰
+- æ± åŒ–å±‚ï¼ˆMax Poolï¼‰: 4 by 4 filter, 4 by 4 stride, padding is 'SAME'
 <br />
-- FlattenÏòÁ¿»¯£ºÈ«Á¬½ÓÇ°Ô¤´¦Àí
-- È«Á¬½Ó²ã£¨FullyConnected layer£©
+- Flattenå‘é‡åŒ–ï¼šå…¨è¿æ¥å‰é¢„å¤„ç†
+- å…¨è¿æ¥å±‚ï¼ˆFullyConnected layerï¼‰
 
-Ä£ĞÍÊ¹ÓÃ $Mini-batch$ Ìİ¶ÈÏÂ½µºÍ $Adam$ ÓÅ»¯£¬¼ÓËÙÑ§Ï°£¬×îĞ¡»¯ËğÊ§
+æ¨¡å‹ä½¿ç”¨ $Mini-batch$ æ¢¯åº¦ä¸‹é™å’Œ $Adam$ ä¼˜åŒ–ï¼ŒåŠ é€Ÿå­¦ä¹ ï¼Œæœ€å°åŒ–æŸå¤±
 
 
-### ³ÌĞò½á¹¹
+### ç¨‹åºç»“æ„
 ```python
 def creat_placeholders(n_H0, n_W0, n_C0, n_y):
     '''
-    ´´½¨Õ¼Î»·û£¨ÊäÈëÍ¼Æ¬µÄ³ß´ç + ·ÖÀàÆ÷¸öÊı£©
+    åˆ›å»ºå ä½ç¬¦ï¼ˆè¾“å…¥å›¾ç‰‡çš„å°ºå¯¸ + åˆ†ç±»å™¨ä¸ªæ•°ï¼‰
     '''
     return X, Y
     
 def initialize_parameters():
     '''
-    ³õÊ¼»¯È¨ÖØ²ÎÊı   W1:[4,4,3,8]    W2:[2,2,8,16]
+    åˆå§‹åŒ–æƒé‡å‚æ•°   W1:[4,4,3,8]    W2:[2,2,8,16]
     '''
     return parameters
 
@@ -48,18 +48,18 @@ def forward_propagation(X, parameters):
 
 def compute_cost(Z3, Y):
     '''
-    Z3 - Ç°ĞĞ´«²¥×îºóµÄÊä³ö
-    Y - ÕæÊµ±êÇ©ÏòÁ¿µÄÕ¼Î»·û£¬ºÍZ3ĞÎ×´ÏàÍ¬
+    Z3 - å‰è¡Œä¼ æ’­æœ€åçš„è¾“å‡º
+    Y - çœŸå®æ ‡ç­¾å‘é‡çš„å ä½ç¬¦ï¼Œå’ŒZ3å½¢çŠ¶ç›¸åŒ
     '''
     return cost
 
 def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.009, 
 			num_epochs=100, minibatch_size=64, print_cost=True):
-	'''Ä£ĞÍ£¬Õû¸ö¸÷¸öÄ£¿é'''
+	'''æ¨¡å‹ï¼Œæ•´ä¸ªå„ä¸ªæ¨¡å—'''
 	return train_accuracy, test_accuracy, parameters
 ```
 
-### ÔËĞĞ½á¹û
+### è¿è¡Œç»“æœ
 
-- ²âÊÔ¼¯µÄ×¼È·ÂÊÔ¼Îª£º$94.5 \%$
-- ²âÊÔ¼¯µÄ×¼È·ÂÊÔ¼Îª£º$81.7 \%$
+- æµ‹è¯•é›†çš„å‡†ç¡®ç‡çº¦ä¸ºï¼š$94.5 \%$
+- æµ‹è¯•é›†çš„å‡†ç¡®ç‡çº¦ä¸ºï¼š$81.7 \%$
