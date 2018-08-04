@@ -16,10 +16,12 @@
 - 非线性激活函数（Relu）
 - 池化层（Max Pool）: 8 by 8 filter, 8 by 8 stride, padding is 'SAME'
 <br />
+
 - 卷积层（Conv2D）: stride 1, padding is 'SAME'
 - 非线性激活函数（Relu）
 - 池化层（Max Pool）: 4 by 4 filter, 4 by 4 stride, padding is 'SAME'
 <br />
+
 - Flatten向量化：全连接前预处理
 - 全连接层（FullyConnected layer）
 
